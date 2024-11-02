@@ -9,7 +9,8 @@ const Weather = () => {
   let [weatherData, setWeatherData] = useState(null)
   let [city, setCity] = useState("")
   let [detail, setdetail] = useState(false)
-  let [found,setFound]=useState(false)
+  let [found,setFound]=useState("start")
+  console.log(found)
   let fetchApi = async () => {
     let apikey = "9d4afb65075749db58867ab7a3aac856"
     let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
@@ -54,7 +55,7 @@ const Weather = () => {
           </div>
         </div> : <></>}
         <button onClick={()=>(detail ? setdetail(false) : setdetail(true))} className='detBut'>{detail ? <FaCaretUp /> : <FaCaretDown />}</button>
-      </div>): found && <div className='weatherCarderr'><h3>City not found</h3></div>}
+      </div>): !found && <div className='weatherCarderr'><h3>City not found</h3></div>}
     </div>
   )
 }
