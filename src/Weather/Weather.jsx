@@ -35,7 +35,7 @@ const Weather = () => {
       {weatherData ? (<div className='weatherCard'>
         <h3>City: {weatherData.name} <FaMapLocationDot /> </h3>
         <h4>Temparature <CiTempHigh /></h4>
-        <h1>{weatherData.main.temp} <TbTemperatureCelsius /> <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="" /></h1>
+        <h1>{weatherData.main.temp} <TbTemperatureCelsius /> <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="" className='image'/></h1>
         <h2>Country Code: {weatherData.sys.country}</h2>
         <p>Weather Description : {weatherData.weather[0].description}</p>
         {detail ? <div className='det'>
