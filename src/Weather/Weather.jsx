@@ -13,7 +13,7 @@ const Weather = () => {
   console.log(found)
   let fetchApi = async () => {
     let apikey = "9d4afb65075749db58867ab7a3aac856"
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
     try {
       let data = await fetch(apiUrl);
       let finalData = await data.json()
